@@ -1,0 +1,190 @@
+.account-container {
+  max-width: 540px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin-top: 80px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #f5f5f5;
+  border-radius: 18px;
+  padding: 18px 18px 18px 18px;
+  margin-bottom: 32px;
+  position: relative;   
+
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.fullname {
+  color: #888;
+  font-size: 1rem;
+}
+
+.change-avatar-btn {
+  background: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  background: #fafafa;
+  resize: none;
+}
+
+.form-group input[disabled] {
+  background: #ededed;
+  color: #aaa;
+}
+
+.form-group small {
+  color: #888;
+  font-size: 0.95em;
+}
+
+.char-count {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  color: #aaa;
+  font-size: 0.95em;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: .3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.switch input:checked + .slider {
+  background-color: #0095f6;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.save-btn, .change-password-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.save-btn {
+  background: #0095f6;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #0077c2;
+}
+
+.change-password-btn {
+  background: #fff;
+  color: #0095f6;
+  border: 1.5px solid #0095f6;
+}
+
+.change-password-btn:hover {
+  background: #0095f6;
+  color: #fff;
+}

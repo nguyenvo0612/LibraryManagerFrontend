@@ -1,0 +1,62 @@
+<div class="borrow-slip-container">
+  <h2>Danh sách phiếu mượn</h2>
+
+  <!-- Bộ lọc tình trạng -->
+  <div class="filter-row">
+    <label for="statusFilter">Lọc theo tình trạng:</label>
+    <select id="statusFilter" [(ngModel)]="statusFilter">
+      <option value="">Tất cả</option>
+      <option value="Đang mượn">Đang mượn</option>
+      <option value="Đã trả">Đã trả</option>
+      <option value="Quá hạn">Quá hạn</option>
+    </select>
+  </div>
+
+  <table class="borrow-slip-table">
+    <thead>
+      <tr>
+        <th>Ngày mượn</th>
+        <th>Hạn trả</th>
+        <th>Tình trạng</th>
+        <th>Số lượng sách</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of filteredTickets()">
+        <td>{{ ticket.borrowDate | date:'dd/MM/yyyy' }}</td>
+        <td>{{ ticket.dueDate | date:'dd/MM/yyyy' }}</td>
+        <td>
+          <span [ngClass]="{
+            'status-borrowed': ticket.status === 'Đang mượn',
+            'status-returned': ticket.status === 'Đã trả',
+            'status-overdue': ticket.status === 'Quá hạn'
+          }">
+            {{ ticket.status }}
+          </span>
+        </td>
+        <td>{{ ticket.quantity }}</td>
+        <td>
+          <button class="view-btn" (click)="viewDetail(ticket)">Xem</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Chi tiết phiếu mượn (hiện khi chọn) -->
+  <div *ngIf="selectedTicket" class="ticket-detail-modal">
+    <div class="ticket-detail-content">
+      <h3>Chi tiết phiếu mượn</h3>
+      <p><b>Ngày mượn:</b> {{ selectedTicket.borrowDate | date:'dd/MM/yyyy' }}</p>
+      <p><b>Hạn trả:</b> {{ selectedTicket.dueDate | date:'dd/MM/yyyy' }}</p>
+      <p><b>Tình trạng:</b> {{ selectedTicket.status }}</p>
+      <p><b>Số lượng sách:</b> {{ selectedTicket.quantity }}</p>
+      <ul>
+        <li *ngFor="let book of selectedTicket.books">
+          <b>{{ book.title }}</b> - {{ book.author }}
+        </li>
+      </ul>
+      <button (click)="closeDetail()">Đóng</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo-section">
+      <a routerLink="/home" class="logo">
+        <img src="assets/images/library-logo.png" alt="Library Logo">
+        <span>Library Manager</span>
+      </a>
+    </div>
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Trang chủ</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">Giới thiệu</a></li>
+        <li><a routerLink="/news" routerLinkActive="active">Tin tức</a></li>
+        <li><a routerLink="/account" routerLinkActive="active">Tài khoản</a></li>
+        <li><a routerLink="/borrow-ticket" routerLinkActive="active">Phiếu mượn</a></li>
+        <li><a routerLink="/order" routerLinkActive="active">Giỏ hàng</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
